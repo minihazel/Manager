@@ -16,9 +16,9 @@ namespace Manager
 {
     public partial class mainForm : Form
     {
-        public Color listBackcolor = Color.FromArgb(255, 28, 28, 28);
-        public Color listSelectedcolor = Color.FromArgb(255, 40, 40, 40);
-        public Color listHovercolor = Color.FromArgb(255, 35, 35, 35);
+        public Color listBackcolor = SystemColors.Control;
+        public Color listSelectedcolor = Color.Silver;
+        public Color listHovercolor = Color.Gainsboro;
 
         public string currentDir = Environment.CurrentDirectory;
         public string currentDbName = "db.json";
@@ -49,6 +49,14 @@ namespace Manager
             {
                 this.Text = $"Manager - uninitiated";
                 this.Tag = $"Manager - uninitiated";
+            }
+        }
+
+        private void deSelectAll(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                ctrl.BackColor = listBackcolor;
             }
         }
 
@@ -100,10 +108,50 @@ namespace Manager
                     lbl.Font = new Font("Bahnschrift Light", 12, FontStyle.Regular);
                     lbl.BackColor = this.BackColor;
                     lbl.ForeColor = this.ForeColor;
+
+                    lbl.MouseEnter += new EventHandler(installation_MouseEnter);
+                    lbl.MouseLeave += new EventHandler(installation_MouseLeave);
+                    lbl.MouseDown += new MouseEventHandler(installation_MouseDown);
+
                     lbl.Margin = new Padding(1, 1, 1, 1);
                     lbl.Cursor = Cursors.Hand;
                     panelInstallations.Controls.Add(lbl);
                 }
+            }
+        }
+
+        private void installation_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Label label = (System.Windows.Forms.Label)sender;
+            if (label.Text != "")
+            {
+                if (label.BackColor != listSelectedcolor)
+                {
+                    label.BackColor = listHovercolor;
+                }
+            }
+        }
+
+        private void installation_MouseLeave(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Label label = (System.Windows.Forms.Label)sender;
+            if (label.Text != "")
+            {
+                if (label.BackColor != listSelectedcolor)
+                {
+                    label.BackColor = listBackcolor;
+                }
+            }
+        }
+
+        private void installation_MouseDown(object sender, MouseEventArgs e)
+        {
+            System.Windows.Forms.Label label = (System.Windows.Forms.Label)sender;
+
+            if (label.Text != "")
+            {
+                deSelectAll(label.Parent);
+                label.BackColor = listSelectedcolor;
             }
         }
     }

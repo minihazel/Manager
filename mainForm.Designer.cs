@@ -33,11 +33,11 @@
             this.titleInstallations = new System.Windows.Forms.Label();
             this.titleInstallationStatus = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageSettings = new System.Windows.Forms.PictureBox();
+            this.imageAddNew = new System.Windows.Forms.PictureBox();
             this.imageInstallationStatus = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageAddNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageInstallationStatus)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,28 +80,28 @@
             this.panel2.Size = new System.Drawing.Size(502, 470);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox2
+            // imageSettings
             // 
-            this.pictureBox2.BackgroundImage = global::Manager.Properties.Resources.settings;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(289, 23);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.imageSettings.BackgroundImage = global::Manager.Properties.Resources.settings;
+            this.imageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageSettings.Location = new System.Drawing.Point(289, 23);
+            this.imageSettings.Name = "imageSettings";
+            this.imageSettings.Size = new System.Drawing.Size(24, 24);
+            this.imageSettings.TabIndex = 5;
+            this.imageSettings.TabStop = false;
+            this.imageSettings.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox1
+            // imageAddNew
             // 
-            this.pictureBox1.BackgroundImage = global::Manager.Properties.Resources.add_small;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(247, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.imageAddNew.BackgroundImage = global::Manager.Properties.Resources.add_small;
+            this.imageAddNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageAddNew.Location = new System.Drawing.Point(247, 23);
+            this.imageAddNew.Name = "imageAddNew";
+            this.imageAddNew.Size = new System.Drawing.Size(24, 24);
+            this.imageAddNew.TabIndex = 4;
+            this.imageAddNew.TabStop = false;
             // 
             // imageInstallationStatus
             // 
@@ -117,8 +117,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 505);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imageSettings);
+            this.Controls.Add(this.imageAddNew);
             this.Controls.Add(this.imageInstallationStatus);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.titleInstallationStatus);
@@ -131,8 +131,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.mainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageAddNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageInstallationStatus)).EndInit();
             this.ResumeLayout(false);
 
@@ -145,8 +145,8 @@
         private System.Windows.Forms.Label titleInstallationStatus;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox imageInstallationStatus;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox imageAddNew;
+        private System.Windows.Forms.PictureBox imageSettings;
     }
 }
 

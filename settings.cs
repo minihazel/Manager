@@ -99,6 +99,35 @@ namespace Manager
             }
         }
 
+        private void editInfo(string _username, string pw, string instPath)
+        {
+            string dbPath = Path.Combine(currentDir, currentDbName);
+            string json = File.ReadAllText(dbPath);
+
+            JObject dbObject = JObject.Parse(json);
+            foreach (var item in (JArray)dbObject["Users"])
+            {
+                string username = item["Username"].ToString();
+                if (username == _username)
+                {
+                    item["Password"] = pw;
+                    item["Installation_Path"] = instPath;
+
+                    var updatedData = JsonConvert.SerializeObject(dbObject, Formatting.Indented);
+
+                    try
+                    {
+                        File.WriteAllText(dbPath, updatedData);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"ERROR: {ex.Message.ToString()}");
+                        MessageBox.Show($"We encountered an error: {ex.Message.ToString()}", this.Text, MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             bool alreadyExists = false;
@@ -116,6 +145,10 @@ namespace Manager
                 string username = txtUsername.Text;
                 string pw = txtPassword.Text;
                 string installPath = txtInstallationPath.Text;
+
+                bool installPathExists = Directory.Exists(installPath);
+                if (!installPathExists)
+                    Directory.CreateDirectory(installPath);
 
                 string dbPath = Path.Combine(currentDir, currentDbName);
                 string json = File.ReadAllText(dbPath);
@@ -153,6 +186,14 @@ namespace Manager
         private void settings_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm.Text = $"Manager - {listUsers.SelectedItem.ToString()}";
+        }
+
+        private void btnEditCurrentUser_Click(object sender, EventArgs e)
+        {
+            if (listUsers.SelectedText != "" && txtUsername.Text != "")
+            {
+                editInfo(listUsers.SelectedText.ToString(), txtPassword.Text, txtInstallationPath.Text);
+            }
         }
     }
 }

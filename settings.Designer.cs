@@ -38,6 +38,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.listUsers = new System.Windows.Forms.ComboBox();
             this.titleUsername = new System.Windows.Forms.Label();
+            this.btnEditCurrentUser = new System.Windows.Forms.Button();
             this.groupAuthentication.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.groupAuthentication.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupAuthentication.Controls.Add(this.btnEditCurrentUser);
             this.groupAuthentication.Controls.Add(this.txtInstallationPath);
             this.groupAuthentication.Controls.Add(this.titleInstallationPath);
             this.groupAuthentication.Controls.Add(this.btnAddUser);
@@ -144,6 +146,17 @@
             this.titleUsername.Text = "Username";
             this.titleUsername.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // btnEditCurrentUser
+            // 
+            this.btnEditCurrentUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditCurrentUser.Location = new System.Drawing.Point(166, 256);
+            this.btnEditCurrentUser.Name = "btnEditCurrentUser";
+            this.btnEditCurrentUser.Size = new System.Drawing.Size(150, 35);
+            this.btnEditCurrentUser.TabIndex = 15;
+            this.btnEditCurrentUser.Text = "Edit current user";
+            this.btnEditCurrentUser.UseVisualStyleBackColor = true;
+            this.btnEditCurrentUser.Click += new System.EventHandler(this.btnEditCurrentUser_Click);
+            // 
             // settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -174,5 +187,6 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.TextBox txtInstallationPath;
         private System.Windows.Forms.Label titleInstallationPath;
+        private System.Windows.Forms.Button btnEditCurrentUser;
     }
 }
