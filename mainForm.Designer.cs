@@ -90,7 +90,7 @@
             this.imageSettings.Size = new System.Drawing.Size(24, 24);
             this.imageSettings.TabIndex = 5;
             this.imageSettings.TabStop = false;
-            this.imageSettings.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.imageSettings.Click += new System.EventHandler(this.imageSettings_Click);
             // 
             // imageAddNew
             // 
@@ -102,6 +102,7 @@
             this.imageAddNew.Size = new System.Drawing.Size(24, 24);
             this.imageAddNew.TabIndex = 4;
             this.imageAddNew.TabStop = false;
+            this.imageAddNew.Click += new System.EventHandler(this.imageAddNew_Click);
             // 
             // imageInstallationStatus
             // 

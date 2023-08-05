@@ -28,7 +28,7 @@ namespace Manager
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void imageSettings_Click(object sender, EventArgs e)
         {
             settings wnd = new settings(this);
             wnd.Show();
@@ -41,14 +41,14 @@ namespace Manager
             if (currentUser != "" && currentUser.Length > 0)
             {
                 this.Text = $"Manager - {currentUser}";
-                this.Tag = $"Manager - {currentUser}";
+                this.Tag = currentUser;
 
                 listInstallations(fetchCurrentUser(this.Text));
             }
             else
             {
                 this.Text = $"Manager - uninitiated";
-                this.Tag = $"Manager - uninitiated";
+                this.Tag = "uninitiated";
             }
         }
 
@@ -153,6 +153,14 @@ namespace Manager
                 deSelectAll(label.Parent);
                 label.BackColor = listSelectedcolor;
             }
+        }
+
+        private void imageAddNew_Click(object sender, EventArgs e)
+        {
+            addInstallation frm = new addInstallation();
+            frm.installPath = "";
+
+            frm.Show();
         }
     }
 }
